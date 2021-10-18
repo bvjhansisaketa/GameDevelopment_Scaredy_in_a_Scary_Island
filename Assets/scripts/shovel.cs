@@ -6,6 +6,7 @@ public class shovel : MonoBehaviour
 {
 	private int count;
 
+	[SerializeField] private GameObject p;
 	// Use this for initialization
 	void Start()
 	{
@@ -22,6 +23,7 @@ public class shovel : MonoBehaviour
 		{
 			Debug.Log("ship");
 			col.gameObject.SetActive(false);
+			p.GetComponent<charactermovement>().dragable[2].SetActive(true);
 			count = 1;
 			
 		}

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 
@@ -75,7 +76,12 @@ public class charactermovement : MonoBehaviour
 					i[j] = 1;
 					break;
 				}
-				
+
+			}
+
+			if (col.gameObject == dragable[2])
+			{
+				SceneManager.LoadScene("Scenes/SampleScene");
 			}
 			
 			

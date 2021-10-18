@@ -24,7 +24,7 @@ public class rope : MonoBehaviour
 			Debug.Log("ship");
 			col.GetComponent<Animation>().Play();
 			count = 1;
-			
+			gameObject.SetActive(false);
 		}
 
 		if (count == 1)
