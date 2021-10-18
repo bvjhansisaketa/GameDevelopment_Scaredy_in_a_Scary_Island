@@ -41,14 +41,14 @@ public class draganddropitem : MonoBehaviour,IDragHandler
 
 	public void OnDrag(PointerEventData eventData)
 	{
-		Debug.Log(gameObject.name);
+		//Debug.Log(gameObject.name);
 		s = gameObject.GetComponent<Image>().sprite;
 		drop = false;
 		//p.GetComponent<charactermovement>().StartCoroutine("dropobj",s.name);
 		StartCoroutine(move(s.name));
 		gameObject.GetComponent<Image>().sprite = img;
 		p.GetComponent<charactermovement>().i[j.IndexOf(gameObject.name)] = 0;
-		Debug.Log(name + " Game Object Clicked!");
+		//Debug.Log(name + " Game Object Clicked!");
 	}
 
 	IEnumerator move(string s)
@@ -57,7 +57,7 @@ public class draganddropitem : MonoBehaviour,IDragHandler
 		{
 			if (s==p.GetComponent<charactermovement>().dragable[o].name && drop == false)
 			{
-				Debug.Log(s);
+				//Debug.Log(s);
 				p.GetComponent<charactermovement>().dragable[o].SetActive(true);
 				p.GetComponent<charactermovement>().dragable[o].transform.position = new Vector3(
 				Camera.main.ScreenToWorldPoint(Input.mousePosition).x,
