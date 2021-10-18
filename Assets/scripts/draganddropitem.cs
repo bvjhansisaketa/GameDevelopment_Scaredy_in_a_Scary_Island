@@ -64,6 +64,10 @@ public class draganddropitem : MonoBehaviour,IDragHandler
 				Camera.main.ScreenToWorldPoint(Input.mousePosition).y,
 				p.GetComponent<charactermovement>().dragable[o].transform.position.z);
 			}
+			// else
+			// {
+			// 	//p.GetComponent<charactermovement>().dragable[o].SetActive(false);
+			// }
 
 			if (Input.GetMouseButtonDown(1))
 			{

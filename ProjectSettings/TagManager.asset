@@ -8,6 +8,7 @@ TagManager:
   - candrag
   - skull
   - ship
+  - soil
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - player
   - tile
   - drag
-  - 
+  - soil
   - 
   - 
   - 

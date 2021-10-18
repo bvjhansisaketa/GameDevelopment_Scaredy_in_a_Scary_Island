@@ -18,11 +18,21 @@ public class rope : MonoBehaviour
 	{
 		int layermaskno = LayerMask.GetMask("drag");
 		Collider2D col = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.mousePosition), 0.1f, layermaskno);
-		if (col != null && col.tag == "ship" && count ==0)
+		if (col != null && col.tag == "ship" && count == 0)
 		{
+			
 			Debug.Log("ship");
 			col.GetComponent<Animation>().Play();
 			count = 1;
+			
+		}
+
+		if (count == 1)
+		{
+			//Destroy(gameObject);
+			gameObject.SetActive(false);
+		}
+		
 // 		Debug.Log("shippppp");
 // 		shipmove.SetBool("moveship",true);
 // 		Debug.Log(shipmove.GetBool("moveship"));
@@ -31,11 +41,10 @@ public class rope : MonoBehaviour
 // 		//col.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
 // 		//col.gameObject.transform.position =  Vector3.MoveTowards(col.gameObject.transform.position,col.gameObject.transform.position*2,Time.deltaTime*2);
 // 		//col.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-		gameObject.SetActive(false);
+		
 // 		
 // 		//shipmove.SetBool("moveship",false);
-		}
-
+		
 		// if (shipmove.GetBool("moveship"))
 		// {
 		// 	shipmove.SetBool("moved",true);

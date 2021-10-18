@@ -54,7 +54,7 @@ public class charactermovement : MonoBehaviour
 
 	if (Input.GetMouseButtonDown(0))
 	{
-		if (col != null && col.tag=="candrag" )
+		if (col != null && col.tag=="candrag")
 		{
 			//Debug.Log(col.GetComponent<SpriteRenderer>().sprite.name);
 			//spr_items.Add(col.GetComponent<SpriteRenderer>().sprite);
@@ -68,7 +68,7 @@ public class charactermovement : MonoBehaviour
 			// }
 			Debug.Log(dragable.Count);
 			for(int j = 0;j<i.Length;j++){
-				if (i[j] != 1)
+				if (i[j] != 1 && col.gameObject==dragable[j])
 				{
 					items[j].sprite = col.GetComponent<SpriteRenderer>().sprite;
 					col.gameObject.SetActive(false);
