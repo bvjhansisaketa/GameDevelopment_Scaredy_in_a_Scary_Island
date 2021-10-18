@@ -17,7 +17,7 @@ public class rope : MonoBehaviour
 	void Update()
 	{
 		int layermaskno = LayerMask.GetMask("drag");
-		Collider2D col = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.mousePosition), 0.1f, layermaskno);
+		Collider2D col = Physics2D.OverlapCircle(transform.position, 0.1f, layermaskno);
 		if (col != null && col.tag == "ship" && count == 0)
 		{
 			

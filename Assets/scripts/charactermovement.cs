@@ -67,7 +67,7 @@ public class charactermovement : MonoBehaviour
 			// 	items[spr_items.IndexOf(col.GetComponent<SpriteRenderer>().sprite)].name = col.name;
 			// }
 			Debug.Log(dragable.Count);
-			for(int j = 0;j<i.Length;j++){
+			for(int j = 0;j<i.Length-1;j++){
 				if (i[j] != 1 && col.gameObject==dragable[j])
 				{
 					items[j].sprite = col.GetComponent<SpriteRenderer>().sprite;
@@ -77,6 +77,7 @@ public class charactermovement : MonoBehaviour
 				}
 				
 			}
+			
 			
 		}
 	}

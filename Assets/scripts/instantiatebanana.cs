@@ -13,6 +13,7 @@ public class instantiatebanana : MonoBehaviour {
 	[SerializeField] private AudioSource scaredmin;
 	private float timer = 0;
 	private int count = 0;
+	private float timers = 0;
 	[SerializeField] private float duration=5f;
 
 	[SerializeField] private Animator ani;
@@ -25,6 +26,7 @@ public class instantiatebanana : MonoBehaviour {
 	void Update () {
 		//ani.SetBool("scared",false);
 		timer += Time.deltaTime;
+		timers += Time.deltaTime;
 		if (timer >= duration )
 		{
 			//Debug.Log("banana");
@@ -34,13 +36,11 @@ public class instantiatebanana : MonoBehaviour {
 			timer = 0;
 		}
 		
-		if (timer >= 20 && count <= 5 )
+		if (timers >= 10 && count <= 5 )
 		{
-			//Debug.Log("banana");
+			
 			GameObject Instantiateskull = Instantiate(skull, new Vector3(Random.Range(-30f,23.6f),Random.Range(-24.4f,13f),transform.position.z), Quaternion.identity);
-			Instantiateskull.transform.localScale = new Vector3(0.3f, 0.2f, 0f);
 			Instantiateskull.SetActive(true);
-			timer = 0;
 			count++;
 		}
 	}
