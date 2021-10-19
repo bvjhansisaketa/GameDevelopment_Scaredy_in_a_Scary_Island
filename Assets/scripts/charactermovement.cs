@@ -76,6 +76,7 @@ public class charactermovement : MonoBehaviour
 					i[j] = 1;
 					break;
 				}
+				
 
 			}
 
