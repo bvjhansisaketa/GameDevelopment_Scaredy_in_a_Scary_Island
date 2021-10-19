@@ -44,6 +44,7 @@ public class instantiatebanana : MonoBehaviour {
 			count++;
 		}
 	}
+	
 
 	private void OnCollisionEnter2D(Collision2D other)
 	{
