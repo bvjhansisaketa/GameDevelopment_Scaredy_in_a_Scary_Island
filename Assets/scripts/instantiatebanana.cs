@@ -30,7 +30,7 @@ public class instantiatebanana : MonoBehaviour {
 		if (timer >= duration )
 		{
 			//Debug.Log("banana");
-			GameObject Instantiateban = Instantiate(banana, new Vector3(Random.Range(-30f,23.6f),Random.Range(-24.4f,13f),transform.position.z), Quaternion.identity);
+			GameObject Instantiateban = Instantiate(banana, new Vector3(Random.Range(-48f,8f),Random.Range(-38f,10.5f),transform.position.z), Quaternion.identity);
 			Instantiateban.transform.localScale = new Vector3(0.3f, 0.2f, 0f);
 			Instantiateban.SetActive(true);
 			timer = 0;
@@ -39,7 +39,7 @@ public class instantiatebanana : MonoBehaviour {
 		if (timers >= 10 && count <= 5 )
 		{
 			
-			GameObject Instantiateskull = Instantiate(skull, new Vector3(Random.Range(-30f,23.6f),Random.Range(-24.4f,13f),transform.position.z), Quaternion.identity);
+			GameObject Instantiateskull = Instantiate(skull, new Vector3(Random.Range(-48f,8f),Random.Range(-38f,10.5f),transform.position.z), Quaternion.identity);
 			Instantiateskull.SetActive(true);
 			count++;
 		}
