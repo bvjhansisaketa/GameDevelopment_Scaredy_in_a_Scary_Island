@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class shovel : MonoBehaviour
+public class shovel : MonoBehaviour, IInventoryItems
 {
 	private int count;
 
@@ -33,5 +33,28 @@ public class shovel : MonoBehaviour
 			gameObject.SetActive(false);
 		}
 		
+	}
+
+	public string Name
+	{
+		get
+		{
+			return "Rope";
+		}
+	}
+
+	public Sprite _Image = null;
+
+	public Sprite Image
+	{
+		get
+		{
+			return _Image;
+		}
+	}
+	public void OnPickup()
+	{
+		Debug.Log("pivkup function");
+		gameObject.SetActive(false);
 	}
 }

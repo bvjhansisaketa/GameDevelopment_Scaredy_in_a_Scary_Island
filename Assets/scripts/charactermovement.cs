@@ -17,7 +17,7 @@ public class charactermovement : MonoBehaviour
 	public int[] i = {0,0,0,0,0} ;
 	[SerializeField]  public List<GameObject> dragable;
 	private float bound = 50f;
-	
+	public Inventory inventory;
 	
 	// Use this for initialization
 	void Start () {
@@ -57,6 +57,13 @@ public class charactermovement : MonoBehaviour
 	{
 		if (col != null && col.tag=="candrag")
 		{
+			//Debug.Log(col.name);
+			IInventoryItems item = col.GetComponent<IInventoryItems>();
+			if (item != null)
+			{
+				Debug.Log(item);
+				inventory.AddItem(item);
+			}
 			//Debug.Log(col.GetComponent<SpriteRenderer>().sprite.name);
 			//spr_items.Add(col.GetComponent<SpriteRenderer>().sprite);
 			//Debug.Log(spr_items.Count);
@@ -67,23 +74,23 @@ public class charactermovement : MonoBehaviour
 			// 	items[spr_items.IndexOf(col.GetComponent<SpriteRenderer>().sprite)].sprite = col.GetComponent<SpriteRenderer>().sprite;
 			// 	items[spr_items.IndexOf(col.GetComponent<SpriteRenderer>().sprite)].name = col.name;
 			// }
-			Debug.Log(dragable.Count);
-			for(int j = 0;j<i.Length-1;j++){
-				if (i[j] != 1 && col.gameObject==dragable[j])
-				{
-					items[j].sprite = col.GetComponent<SpriteRenderer>().sprite;
-					col.gameObject.SetActive(false);
-					i[j] = 1;
-					break;
-				}
-				
+			//Debug.Log(dragable.Count);
+			// for(int j = 0;j<i.Length-1;j++){
+			// 	if (i[j] != 1 && col.gameObject==dragable[j])
+			// 	{
+			// 		items[j].sprite = col.GetComponent<SpriteRenderer>().sprite;
+			// 		col.gameObject.SetActive(false);
+			// 		i[j] = 1;
+			// 		break;
+			// 	}
+			// 	
 
-			}
+			//}
 
-			if (col.gameObject == dragable[2])
-			{
-				SceneManager.LoadScene("Scenes/SampleScene");
-			}
+			// if (col.gameObject == dragable[2])
+			// {
+			// 	SceneManager.LoadScene("Scenes/SampleScene");
+			// }
 			
 			
 		}
