@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class shovel : MonoBehaviour, IInventoryItems
 {
-	private int count;
-
+	
 	[SerializeField] private GameObject p;
 	// Use this for initialization
 	void Start()
 	{
-		count = 0;
+		
 	}
 
 	// Update is called once per frame
@@ -19,19 +18,13 @@ public class shovel : MonoBehaviour, IInventoryItems
 		int layermaskno = LayerMask.GetMask("soil");
 		Collider2D col =
 			Physics2D.OverlapCircle(transform.position, 0.1f, layermaskno);
-		if (col != null && col.tag == "soil" && count == 0)
+		if (col != null && col.tag == "soil")
 		{
 			Debug.Log("ship");
 			col.gameObject.SetActive(false);
-			p.GetComponent<charactermovement>().dragable[2].SetActive(true);
-			count = 1;
-			
-		}
-
-		if (count==1)
-		{
 			gameObject.SetActive(false);
 		}
+
 		
 	}
 
@@ -39,7 +32,7 @@ public class shovel : MonoBehaviour, IInventoryItems
 	{
 		get
 		{
-			return "Rope";
+			return gameObject.name;
 		}
 	}
 
@@ -54,7 +47,14 @@ public class shovel : MonoBehaviour, IInventoryItems
 	}
 	public void OnPickup()
 	{
-		Debug.Log("pivkup function");
+		Debug.Log("pikup function");
 		gameObject.SetActive(false);
+	}
+
+	public void Ondrop()
+	{
+		gameObject.SetActive(true);
+		gameObject.transform.position = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x,Camera.main.ScreenToWorldPoint(Input.mousePosition).y,transform.position.z);
+
 	}
 }

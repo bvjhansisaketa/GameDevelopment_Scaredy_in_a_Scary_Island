@@ -36,4 +36,9 @@ public class banansample : MonoBehaviour,IInventoryItems {
 		Debug.Log("pivkup function");
 		//gameObject.SetActive(false);
 	}
+
+	public void Ondrop()
+	{
+		Debug.Log("banaana drop");
+	}
 }

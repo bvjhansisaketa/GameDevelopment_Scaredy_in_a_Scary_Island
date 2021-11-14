@@ -1,10 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Experimental.UIElements;
+using Image = UnityEngine.UI.Image;
 
-public class itemdrop : MonoBehaviour,IDropHandler {
-
+public class itemdrop : MonoBehaviour,IDropHandler
+{
+	public Inventory Inventory;
 	// Use this for initialization
 	void Start () {
 		
@@ -20,7 +24,16 @@ public class itemdrop : MonoBehaviour,IDropHandler {
 		RectTransform invPanel = transform as RectTransform;
 		if (!RectTransformUtility.RectangleContainsScreenPoint(invPanel, Input.mousePosition))
 		{
-			Debug.Log("Drop item");
+			String p = transform.GetChild(0).GetComponent<Image>().sprite.name;
+			for (int i = 0; i < Inventory.mItems.Count; i++)
+			{
+				if (Equals(Inventory.mItems[i].Name, p))
+				{
+					Inventory.RemoveItem(Inventory.mItems[i]);
+				}
+			}
+
+			//inventory.RemoveItem();
 		}
 	}
 }

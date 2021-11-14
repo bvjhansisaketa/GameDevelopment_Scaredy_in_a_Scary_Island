@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Experimental.UIElements;
+using Image = UnityEngine.UI.Image;
 
 public class itemdrag : MonoBehaviour, IDragHandler, IEndDragHandler {
+	public IInventoryItems Item { get; set; }
+	public Sprite s;
 
 	// Use this for initialization
 	void Start () {
@@ -17,7 +21,7 @@ public class itemdrag : MonoBehaviour, IDragHandler, IEndDragHandler {
 
 	public void OnDrag(PointerEventData eventData)
 	{
-		
+		s = transform.GetComponent<Image>().sprite;
 		transform.position = Input.mousePosition;
 	}
 

@@ -6,19 +6,18 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
 	private const int SLOTS = 9;
-	private List<IInventoryItems> mItems = new List<IInventoryItems>();
+	public List<IInventoryItems> mItems = new List<IInventoryItems>();
 	public event EventHandler<InventoryEventArgs> ItemAdded;
+	public event EventHandler<InventoryEventArgs> ItemRemoved;
 
 	public void AddItem(IInventoryItems item)
 	{
-		Debug.Log("hi");
 		if (mItems.Count < SLOTS)
 		{
 			Collider2D collider = (item as MonoBehaviour).GetComponent<Collider2D>();
-				Debug.Log(collider);
 			if (collider!= null && collider.enabled)
 			{
-				collider.enabled = false;
+				//collider.enabled = false;
 				mItems.Add(item);
 				item.OnPickup();
 				if (ItemAdded != null)
@@ -27,6 +26,26 @@ public class Inventory : MonoBehaviour
 				}
 			}
 			Debug.Log("item added");
+		}
+	}
+
+	public void RemoveItem(IInventoryItems item)
+	{
+		if (mItems.Contains(item))
+		{
+			//collider.enabled = true;
+			mItems.Remove(item);
+			item.Ondrop();
+			Collider collider = (item as MonoBehaviour).GetComponent<Collider>();
+			if (collider != null)
+			{
+				collider.enabled = true;
+			}
+
+			if (ItemRemoved != null)
+			{
+				ItemRemoved(this, new InventoryEventArgs(item));
+			}
 		}
 	}
 

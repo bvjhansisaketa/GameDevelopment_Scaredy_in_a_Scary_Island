@@ -496,11 +496,15 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Instructions\nThe Motive of the game is to find the way out for the minion
-    to get out of the scary island. You should find the logic using the tools around.
-    So, try to explore the place. To select the tool from scene left click on the
-    tool and to select it from the inventory, drag the tool and to place it on the
-    ground click right click. \nYou can increase your score by collecting the bananas
-    ( just pass by it to collect them). "
+    to get out of the scary island. You can see a group of minions boating in the
+    water. You should find the logic using the tools around. \n( Hint : Try to find
+    the logic where the minions on the boat can find that the there is a minion on
+    the island which needs help )\nSo, try to explore the place. To select the tool
+    from scene left click on the tool and to select it from the inventory, drag the
+    tool and to place it on the ground.\nYou can increase your score by collecting
+    the bananas ( just pass by it to collect them). \nYou have 300 secs to crack the
+    way out from the island.\nTo move left, right, up and down, use the left, right,
+    up and down arrow keys"
 --- !u!222 &1123571371
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -553,11 +557,11 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96

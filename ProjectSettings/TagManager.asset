@@ -9,6 +9,7 @@ TagManager:
   - skull
   - ship
   - soil
+  - gun
   layers:
   - Default
   - TransparentFX

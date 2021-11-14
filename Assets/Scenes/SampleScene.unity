@@ -266,7 +266,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.6886792, g: 0.6877906, b: 0.2891153, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -698,8 +698,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17.3, y: -86}
-  m_SizeDelta: {x: 511.4, y: 30}
+  m_AnchoredPosition: {x: 8, y: -117.9}
+  m_SizeDelta: {x: 511.4, y: 93.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1234473694
 MonoBehaviour:
@@ -727,13 +727,14 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Congratulations!!! You saved the minion and got him out of the scary island. '
+  m_Text: "Congratulations!!! \nYou saved the minion and got him out of the scary
+    island. "
 --- !u!222 &1234473695
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ using UnityEngine.UI;
 
 public class charactermovement : MonoBehaviour
 {
+	[SerializeField] private Text timer;
 	[SerializeField] private Image img;
 	[SerializeField] private AudioSource background;
 	[SerializeField] public  List<Image> items;
@@ -18,21 +19,54 @@ public class charactermovement : MonoBehaviour
 	[SerializeField]  public List<GameObject> dragable;
 	private float bound = 50f;
 	public Inventory inventory;
-	
+
+	public static float time;
 	// Use this for initialization
 	void Start () {
 		background.Play();
 		background.loop = true;
-		
+		time = 5*60f;
+	}
+
+	private void FixedUpdate()
+	{
+		if (time > 0)
+		{
+			timer.text = "TIMER : " + time.ToString();
+			time -= Time.deltaTime;
+		}
+		if(time<0.3)
+		{
+			Debug.Log("gameover");
+			SceneManager.LoadScene("Scenes/Gameover");
+		}
 	}
 	
+	
+
 	// Update is called once per frame
 	void Update ()
 	{
 		
-	Vector2 mousePos = Input.mousePosition;
-	Vector3 f = Camera.main.ScreenToWorldPoint(mousePos);
-	transform.position = Vector3.MoveTowards(transform.position,new Vector3(f.x,f.y,transform.position.z),Time.deltaTime*2);
+	//Vector2 mousePos = Input.mousePosition;
+	//Vector3 f = Camera.main.ScreenToWorldPoint(mousePos);
+	if (Input.GetKey(KeyCode.LeftArrow))
+	{
+		transform.position += Time.deltaTime*4f*Vector3.left;
+	}
+	if (Input.GetKey(KeyCode.RightArrow))
+	{
+		transform.position += Time.deltaTime*4f*Vector3.right;
+	}
+	if (Input.GetKey(KeyCode.DownArrow))
+	{
+		transform.position += Time.deltaTime*4f*Vector3.down;
+	}
+	if (Input.GetKey(KeyCode.UpArrow))
+	{
+		transform.position += Time.deltaTime*4f*Vector3.up;
+	}
+	//transform.position = Vector3.MoveTowards(transform.position,new Vector3(f.x,f.y,transform.position.z),Time.deltaTime*2);
 	Vector2 f1 = Camera.main.WorldToScreenPoint(transform.position);
 	//Debug.Log(f1);
 	//Debug.Log("mousepos relat"+Camera.main.ScreenToWorldPoint(mousePos));
@@ -87,12 +121,14 @@ public class charactermovement : MonoBehaviour
 
 			//}
 
-			// if (col.gameObject == dragable[2])
-			// {
-			// 	SceneManager.LoadScene("Scenes/SampleScene");
-			// }
 			
 			
+			
+		}
+		if (col != null && col.gameObject.tag == "gun")
+		{
+			Debug.Log("gun");
+			SceneManager.LoadScene("Scenes/SampleScene");
 		}
 	}
 	}
