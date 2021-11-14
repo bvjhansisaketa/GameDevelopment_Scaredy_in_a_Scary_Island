@@ -18,7 +18,6 @@ public class Inventory : MonoBehaviour
 				Debug.Log(collider);
 			if (collider!= null && collider.enabled)
 			{
-				
 				collider.enabled = false;
 				mItems.Add(item);
 				item.OnPickup();

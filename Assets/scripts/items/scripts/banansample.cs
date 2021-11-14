@@ -34,6 +34,6 @@ public class banansample : MonoBehaviour,IInventoryItems {
 	public void OnPickup()
 	{
 		Debug.Log("pivkup function");
-		gameObject.SetActive(false);
+		//gameObject.SetActive(false);
 	}
 }
