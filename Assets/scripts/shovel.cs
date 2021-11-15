@@ -21,6 +21,7 @@ public class shovel : MonoBehaviour, IInventoryItems
 		if (col != null && col.tag == "soil")
 		{
 			Debug.Log("ship");
+			p.SetActive(true);
 			col.gameObject.SetActive(false);
 			gameObject.SetActive(false);
 		}

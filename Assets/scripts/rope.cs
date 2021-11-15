@@ -6,7 +6,8 @@ using UnityEngine;
 public class rope : MonoBehaviour, IInventoryItems
 {
 	[SerializeField] private Animation shipmove;
-	
+
+	[SerializeField] private GameObject k;
 	// Use this for initialization
 	void Start()
 	{
@@ -22,6 +23,7 @@ public class rope : MonoBehaviour, IInventoryItems
 		{
 			Debug.Log("ship traced");
 			col.GetComponent<Animation>().Play();
+			k.SetActive(true);
 			gameObject.SetActive(false);
 		}
 	}
